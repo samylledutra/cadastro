@@ -7,21 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: rgb(255, 255, 255);
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
         h1 {
-            color: #333;
+            color: rgb(0, 0, 255);
         }
 
         form {
-            background-color: #fff;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
+            background-color: rgb(225, 225, 255);
+            max-width: 500px;
+            margin: 2px auto;
+            padding: 50px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -32,8 +32,7 @@
         }
 
         input[type="text"],
-        input[type="email"],
-        input[type="number"] {
+        input[type="email"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -70,7 +69,7 @@
 
 <body>
     <h1>Formulário de Pessoa</h1>
-    <form th:action="@{/pessoas/salvar}" th:object="${pessoa}" method="post">
+    <form th:action="@{/pessoas}" th:object="${pessoa}" method="post">
         <input type="hidden" th:field="*{id}">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" th:field="*{nome}" required>
@@ -78,8 +77,8 @@
         <label for="email">E-mail:</label>
         <input type="email" id="email" th:field="*{email}" required>
         <br>
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" th:field="*{idade}" required>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" th:field="*{endereco}" required>
         <br>
         <button type="submit">Salvar</button>
     </form>
